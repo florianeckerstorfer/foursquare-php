@@ -83,9 +83,22 @@ class AuthenticationGateway extends EndpointGateway
     public function initiateLogin()
     {
 
+        return $this->client->redirect($this->getLoginUri());
+
+    }
+
+    /**
+     * returns the login uri
+     * @see https://developer.foursquare.com/overview/auth.html
+     * @throws \RuntimeException
+     * @return mixed
+     */
+    public function getLoginUri()
+    {
+
         if (!$this->canInitiateLogin()) {
             throw new \RuntimeException(
-            	'Cannot authenticate user, dependencies are missing'
+                'Cannot authenticate user, dependencies are missing'
             );
         }
 
@@ -96,7 +109,7 @@ class AuthenticationGateway extends EndpointGateway
         );
 
         $uri = $this->authorizeUri . '?' . http_build_query($uriParams);
-        return $this->client->redirect($uri);
+        return $uri;
 
     }
 
