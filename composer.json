@@ -1,5 +1,5 @@
 {
-    "name": "thetwelvelabs/foursquare",
+    "name": "florianeckerstorfer/foursquare",
     "description": "Foursquare API Client",
     "keywords": ["foursquare"],
     "homepage": "http://thetwelvelabs.com",
@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",  
+        "php": ">=5.3.3",
         "ext-curl": "*"
     },
     "suggest": {
